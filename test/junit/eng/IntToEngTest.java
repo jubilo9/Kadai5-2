@@ -14,4 +14,11 @@ public class IntToEngTest {
 		assertEquals(actual,expected);
 		
 	}
+	@Test
+	public void test20(){
+		IntToEng  ite = new IntToEng();
+		String expected = "twenty one";
+		String actual = ite.translateEng(21);
+		assertEquals(actual,expected);
+	}
 }
