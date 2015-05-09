@@ -21,7 +21,10 @@ public class IntToEng {
 	    	
 	    	if(n<20) return eng1[n];
 	    	if(n<1000&&n%100==0) return eng1[n/100]+" hundred";
-	    	if(n%1000==0) return eng1[n/1000] + " thousand";
+	    	if(n<10000&&n%1000==0) return eng1[n/1000] + " thousand";
+	    	if(n==10000) return "ten thousand";
+	    	if(n%10000==0) return eng2[n/10000] + " thousand";
+
 	    	else {
 	    		String c = String.valueOf(n);
 	    		int l = c.length();
@@ -39,7 +42,16 @@ public class IntToEng {
 	    		int t=0;
 	    		if(n>1000){
 	    			t = n/1000;
-	    			ans2 = eng1[t] + " thousand ";
+	    			if(t<20)ans2 = eng1[t] + " thousand ";
+	       			if(t>=20 && t<=99){
+	    				String a2 =  String.valueOf(t);
+		    			ans2 = eng2[Integer.parseInt(String.valueOf(a2.charAt(0)))];
+		    			nu = Integer.parseInt(String.valueOf(a2.charAt(1))) ;
+		    			if(nu > 0){
+		    				ans2 += " " + eng1[nu] + " thousand ";
+		    			};
+	    			}	
+	    			
 	    		}
 	    		int h = n-(t*1000);
 	    		if(h >= 100){
