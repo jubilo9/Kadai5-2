@@ -119,4 +119,55 @@ public class IntToEngTest {
 		String actual = ite.translateEng(98010);
 		assertEquals(actual,expected);
 	}
+	
+	@Test
+	public void test999999(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred ninety nine thousand nine hundred ninety nine";
+		String actual = ite.translateEng(999999);
+		assertEquals(actual,expected);	
+	}
+	
+	@Test
+	public void test900000(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred thousand";
+		String actual = ite.translateEng(900000);
+		assertEquals(actual,expected);	
+	}
+	@Test
+	public void test990000(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred ninety thousand";
+		String actual = ite.translateEng(990000);
+		assertEquals(actual,expected);	
+	}
+	@Test
+	public void test909000(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred nine thousand";
+		String actual = ite.translateEng(909000);
+		assertEquals(actual,expected);	
+	}
+	@Test
+	public void test900900(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred thousand nine hundred";
+		String actual = ite.translateEng(900900);
+		assertEquals(actual,expected);	
+	}
+	@Test
+	public void test900090(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred thousand ninety";
+		String actual = ite.translateEng(900090);
+		assertEquals(actual,expected);	
+	}
+	@Test
+	public void test900009(){
+		IntToEng  ite = new IntToEng();
+		String expected = "nine hundred thousand nine";
+		String actual = ite.translateEng(900009);
+		assertEquals(actual,expected);	
+	}
 }
